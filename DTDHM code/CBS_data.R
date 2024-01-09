@@ -1,6 +1,6 @@
 library(DNAcopy)
 "CBS_data"<-function(){
-  data = read.table("/The path to the DTDHM file/RD")
+  data = read.table("/The path to the DTDHM.py/RD")
   #data = data[-1, -(1:2)]
   #data = log2(data/2)
   head = matrix(0, nrow(data), 3)
