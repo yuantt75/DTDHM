@@ -28,7 +28,7 @@ DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Gener
 ##### 1.3 Required R packages:
 
 - DNAcopy
-- DNAcopy needs to add the file path to DTDHM.py
+- The file path of DTDHM.py needs to be added to DNAcopy
 
 #### 2.Running software
 
