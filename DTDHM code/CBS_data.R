@@ -1,15 +1,13 @@
 library(DNAcopy)
 "CBS_data"<-function(){
-  data = read.table("/media/yuantt/USB移动磁盘/totalModel/run_KNNTD+CBS+dr3+MQ/RD")
+  data = read.table("/The path to the DTDHM file/RD")
   #data = data[-1, -(1:2)]
   #data = log2(data/2)
-  # matrix()创建矩阵 行为data个数 列为3 数据填充0
-  # nrow：矩阵的行数 ncol：矩阵的列数
   head = matrix(0, nrow(data), 3)
   head[,1] = 1
   head[,2] = 1:nrow(data)
   head[,3] = 1:nrow(data)
-  
+
   chrom <- rep(1, nrow(data))
   maploc <- 1:nrow(data)
   seg.file_g = matrix(0,1,6)
