@@ -51,4 +51,4 @@ The bam file must be sorted and indexed. You can do the following: $samtools sor
 - bam file: The path to the bam file representing the sample used by the user.
 - discordant bam file: The path to the bam file containing inconsistent read pairs.
 
-- str1:Length of read. The usual value is 100M.
+- str1:Length of read. The usual value is 100M. M means match in the CIGAR field
