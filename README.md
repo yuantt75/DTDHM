@@ -38,7 +38,7 @@ Usually, the following documents are required:
 
 - A genome reference sequence fasta file. The fasta file must be indexed. You can do the following: $samtools faidx reference.fa
 - A bam file from a sample. 
-  The bam file needs to be duplicated. You can do the following: $sambamba markdup -r example.bam example_markdup.bam
+  The bam file needs to be de-duplicated. You can do the following: $sambamba markdup -r example.bam example_markdup.bam
 - Another bam file: Extract inconsistent read pairs from the bam file. You can do the following: $samtools view -b -F 1294 example.bam > example_discordants.bam
 
 The bam file must be sorted and indexed. You can do the following: $samtools sort example.bam; $samtools index example.bam
