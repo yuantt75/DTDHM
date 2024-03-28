@@ -44,7 +44,8 @@ Usually, the following documents are required:
   The bam file needs to be de-duplicated. You can do the following: $sambamba markdup -r example.bam example_markdup.bam
 - Another bam file: Extract inconsistent read pairs from the bam file. You can do the following: $samtools view -b -F 1294 example.bam > example_discordants.bam
 
-The bam file must be sorted and indexed. You can do the following: $samtools sort example.bam; $samtools index example.bam
+The bam file must be sorted and indexed. You can do the following: $samtools sort example.bam; $samtools index example.bam.
+
 Please make sure to update the path information for the input data RD in the CBS_data.R file.
 
 ##### 2.2 Operating command
@@ -54,7 +55,6 @@ Please make sure to update the path information for the input data RD in the CBS
 - reference: The path to the fasta file of the genome reference sequence used by the user.
 - bam file: The path to the bam file representing the sample used by the user.
 - discordant bam file: The path to the bam file containing inconsistent read pairs.
-
 - str1:Length of read. The usual value is 100M. M means match in the CIGAR field
 
 ##### 2.3 Output file
