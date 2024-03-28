@@ -59,7 +59,7 @@ Please make sure to update the path information for the input data RD in the CBS
 
 ##### 2.3 Output file
 
-- bam name + rusult.txt: [chromosome_name  start  end  type].
+- bam name + rusult.txt: [chromosome_name, start, end, type].
   
   Store the final results of the code.
   
