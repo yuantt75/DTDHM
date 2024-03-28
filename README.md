@@ -60,15 +60,19 @@ Please make sure to update the path information for the input data RD in the CBS
 ##### 2.3 Output file
 
 - bam name + rusult.txt: [chromosome_name  start  end  type].
+  
   Store the final results of the code.
   
 - bam name + range_cigar.txt: [reference_name, pos, cigarstring, pnext, tlen, length, flag&64, flag&128, flag].
+  
   Store the information required for the SR strategy. This file is generated in the directory where the BAM file is located.
   
 - bam name + range_discordant.txt: [reference_name, pos, cigarstring, pnext, tlen, length, flag].
+  
   Store the information required for the PEM strategy. This file is generated in the directory where the BAM file is located.
 
 - RD file: [RD].
+  
   Store the RD values in bin. The RD file is the input data to CBS_data.R. At this point, the RD signal has corrected the GC content deviation and removed the noise. The values in this file will be repeatedly overwritten.
   
 - seg file: [col, chr, start, end, num_mark, seg_mean].
