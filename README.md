@@ -4,7 +4,7 @@ DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Gener
 
 #### 1.Installation
 
-##### 1.1 **Basic requirements:**
+##### 1.1 Basic requirements
 
 - Software: Python, R, SAMtools, BWA, sambamba
 - Operating System: Linux
@@ -14,7 +14,7 @@ DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Gener
 - BWA version: 0.7.12-r1039 
 - sambamba version: 0.8.2
 
-##### 1.2 **Required python packages:**
+##### 1.2 Required python packages
 
 - numpy 1.19.2
 - pysam 0.17.0
@@ -28,7 +28,7 @@ DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Gener
 - sys
 - os
 
-##### 1.3 Required R packages:
+##### 1.3 Required R packages
 
 - DNAcopy
 - The file path of RD file needs to be added to DNAcopy
@@ -76,4 +76,5 @@ Please make sure to update the path information for the input data RD in the CBS
   Store the RD values in bin. The RD file is the input data to CBS_data.R. At this point, the RD signal has corrected the GC content deviation and removed the noise. The values in this file will be repeatedly overwritten.
   
 - seg file: [col, chr, start, end, num_mark, seg_mean].
+  
   Store the data segmented by CBS in units of genomic segments. The algorithm needs to read information from this file during execution. The values in this file will be repeatedly overwritten.
