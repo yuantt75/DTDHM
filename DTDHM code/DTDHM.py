@@ -312,7 +312,7 @@ def get_exact_position(chrname, binSize, bam, str1, SVstart, SVend, type):
                           SVend[i] + maxbin * binSize):
             if r.tlen != 0:
                 discordantrange[i].append([r.reference_name, r.pos, r.cigarstring, r.pnext, r.tlen, SVlen[i], r.flag])
-    discordantresult = bam +  "_range_discordant.txt"
+    discordantresult = "_range_discordant.txt"
     with open(bam + discordantresult, 'w') as f1:
         for i in range(len(discordantrange)):
             f1.write("\nthis is " + str(i) + " discordant range:\n")
@@ -332,7 +332,7 @@ def get_exact_position(chrname, binSize, bam, str1, SVstart, SVend, type):
             if r.cigarstring != str1 and r.cigarstring != None and r.tlen != 0:
                 not100Mperrange[i].append([r.reference_name, r.pos, r.cigarstring, r.pnext, r.tlen, SVlen[i], r.flag & 64, r.flag & 128, r.flag])
 
-    cigarresult = bam + "_range_ciagr.txt"
+    cigarresult = "_range_ciagr.txt"
     with open(bam + cigarresult, 'w') as f1:
         for i in range(len(not100Mperrange)):
             f1.write("\nthis is " + str(i) + " big range:\n")
