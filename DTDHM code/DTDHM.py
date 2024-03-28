@@ -15,8 +15,8 @@ import os
 
 def read_ref_file(filename, ref):
     # read reference file
-    # input£ºfasta file and ref array.
-    # output£º ref array
+    # input: fasta file and ref array.
+    # output: ref array
     if os.path.exists(filename):
         print("Read reference file: " + str(filename))
         with open(filename, 'r') as f:
@@ -45,7 +45,7 @@ def ReadDepth(mapq, ReadCount, binNum, ref, binSize):
     # get read depth
     '''
        1. compute the mean of rc in each bin;
-       2. count the number of 'N' in ref. If there is a 'N' in a bin£¬the rd is not counted;
+       2. count the number of 'N' in ref. If there is a 'N' in a binÂ£Â¬the rd is not counted;
        3. GC bias
     '''
     RD = np.full(binNum, 0.0)
@@ -312,7 +312,7 @@ def get_exact_position(chrname, binSize, bam, str1, SVstart, SVend, type):
                           SVend[i] + maxbin * binSize):
             if r.tlen != 0:
                 discordantrange[i].append([r.reference_name, r.pos, r.cigarstring, r.pnext, r.tlen, SVlen[i], r.flag])
-    discordantresult = "_range_discordant.txt"
+    discordantresult = bam +  "_range_discordant.txt"
     with open(bam + discordantresult, 'w') as f1:
         for i in range(len(discordantrange)):
             f1.write("\nthis is " + str(i) + " discordant range:\n")
@@ -332,7 +332,7 @@ def get_exact_position(chrname, binSize, bam, str1, SVstart, SVend, type):
             if r.cigarstring != str1 and r.cigarstring != None and r.tlen != 0:
                 not100Mperrange[i].append([r.reference_name, r.pos, r.cigarstring, r.pnext, r.tlen, SVlen[i], r.flag & 64, r.flag & 128, r.flag])
 
-    cigarresult = "_range_ciagr.txt"
+    cigarresult = bam + "_range_ciagr.txt"
     with open(bam + cigarresult, 'w') as f1:
         for i in range(len(not100Mperrange)):
             f1.write("\nthis is " + str(i) + " big range:\n")
@@ -407,8 +407,8 @@ def Write_step2_file(SV_RD, SV_MQ, SV_Start, SV_End, SV_scores):
 
 def Write_data_file(chr, seg_start, seg_end, seg_count, seg_mq, scores, labels):
     """
-    write cnvdata file
-    pos_start, pos_end, lof_score, p_value
+    write knn data file
+    chr, start, end, rd, mq, score, label
     """
     output = open('_KNN_Score.csv', "w")
     output.write(
@@ -500,13 +500,13 @@ if len(seg_start) != 0:
     clf.fit(RDMQ_scaler)
     labels = clf.labels_
     scores = clf.decision_scores_
-    Write_data_file(seg_chr, seg_Start, seg_End, seg_RD, seg_MQ, scores, labels)
+    # Write_data_file(seg_chr, seg_Start, seg_End, seg_RD, seg_MQ, scores, labels)
 
     maxbin = 2
     threshold = boxplot(scores)
     print("threshold:" + str(threshold))
     SVRD, SVMQ, SVstart, SVend, SVscores, type = filter_range(mode, threshold, seg_Start, seg_End, seg_RD, seg_MQ, scores)
-    Write_step2_file(SVRD, SVMQ, SVstart, SVend, SVscores)
+    # Write_step2_file(SVRD, SVMQ, SVstart, SVend, SVscores)
     SVRD, SVMQ, SVstart, SVend, SVscores = combiningSV(SVRD, SVMQ, SVstart, SVend, SVscores)
     SV_range = np.full((len(SVstart), 2), 0)
     SV_range[:, 0] = SVstart
@@ -514,7 +514,7 @@ if len(seg_start) != 0:
     print("filter_range:" + str(len(SV_range)))
 
     SVStart, SVEnd, SVtype = get_exact_position(chrname, binSize, bam, str1, SVstart, SVend, type)
-    print("SR_range£º" + str(len(SVStart)))
+    print("SR_range:" + str(len(SVStart)))
     output = open(bam + '_result.txt', "w")
     for i in range(len(SVStart)):
         output.write(
