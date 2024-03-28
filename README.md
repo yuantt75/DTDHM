@@ -46,8 +46,6 @@ Usually, the following documents are required:
 
 The bam file must be sorted and indexed. You can do the following: $samtools sort example.bam; $samtools index example.bam.
 
-Please make sure to update the path information for the input data RD in the CBS_data.R file.
-
 ##### 2.2 Operating command
 
 **python DTDHM.py [reference file] [bam file] [discordant bam] [str1]**
@@ -78,3 +76,5 @@ Please make sure to update the path information for the input data RD in the CBS
 - seg file: [col, chr, start, end, num_mark, seg_mean].
   
   Store the data segmented by CBS in units of genomic segments. The algorithm needs to read information from this file during execution. The values in this file will be repeatedly overwritten.
+
+  Before running DTDHM.py, please make sure to update the file path of the input data RD in the CBS_data.R file. The RD file, DTDHM.py, and CBS_data.R are in the same directory.
