@@ -31,7 +31,6 @@ DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Gener
 ##### 1.3 Required R packages
 
 - DNAcopy
-- The file path of RD file needs to be added to DNAcopy
 
 #### 2.Running software
 
@@ -69,12 +68,3 @@ The bam file must be sorted and indexed. You can do the following: $samtools sor
   
   Store the information required for the PEM strategy. This file is generated in the directory where the BAM file is located.
 
-- RD file: [RD].
-  
-  Store the RD values in bin. The RD file is the input data to CBS_data.R. At this point, the RD signal has corrected the GC content deviation and removed the noise. The values in this file will be repeatedly overwritten.
-  
-- seg file: [col, chr, start, end, num_mark, seg_mean].
-  
-  Store the data segmented by CBS in units of genomic segments. The algorithm needs to read information from this file during execution. The values in this file will be repeatedly overwritten.
-
-  Before running DTDHM.py, please make sure to update the file path of the input data RD in the CBS_data.R file. The RD file, DTDHM.py, and CBS_data.R are in the same directory.
