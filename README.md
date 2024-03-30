@@ -62,9 +62,9 @@ The bam file must be sorted and indexed. You can do the following: $samtools sor
   
 - bam name + range_cigar.txt: [reference_name, pos, cigarstring, pnext, tlen, length, flag&64, flag&128, flag].
   
-  Store the information required for the SR strategy. This file is generated in the directory where the BAM file is located.
+  Store the information required for the SR strategy. 
   
 - bam name + range_discordant.txt: [reference_name, pos, cigarstring, pnext, tlen, length, flag].
   
-  Store the information required for the PEM strategy. This file is generated in the directory where the BAM file is located.
+  Store the information required for the PEM strategy. 
 
