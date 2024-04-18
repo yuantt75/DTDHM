@@ -23,10 +23,6 @@ DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Gener
 - matplotlib 3.3.2
 - numba 0.51.2
 - scikit-learn 0.23.2
-- subprocess
-- time
-- sys
-- os
 
 ##### 1.3 Required R packages
 
@@ -56,11 +52,11 @@ The bam file must be sorted and indexed. You can do the following: $samtools sor
 
 ##### 2.3 Output file
 
-- bam name + rusult.txt: [chromosome_name, start, end, type].
+- bam name + rusult.txt: [chromosome_name, start, end, type, length, number].
   
   Store the final results of the code.
   
-- bam name + range_cigar.txt: [reference_name, pos, cigarstring, pnext, tlen, length, flag&64, flag&128, flag].
+- bam name + range_cigar.txt: [reference_name, pos, cigarstring, pnext, tlen, length, flag&64, flag&128, flag, query_name].
   
   Store the information required for the SR strategy. 
   
