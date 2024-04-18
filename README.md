@@ -43,7 +43,7 @@ The bam file must be sorted and indexed. You can do the following: $samtools sor
 
 ##### 2.2 Operating command
 
-**python DTDHM.py [reference file] [bam file] [discordant bam] [str1]**
+**python DTDHM_v1.py [reference file] [bam file] [discordant bam] [str1]**
 
 - reference: The path to the fasta file of the genome reference sequence used by the user.
 - bam file: The path to the bam file representing the sample used by the user.
