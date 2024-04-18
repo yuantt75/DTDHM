@@ -607,7 +607,6 @@ if len(seg_start) != 0:
     rdmq_scaler = scler.fit_transform(RDMQ)
     RDMQ_scaler = pd.DataFrame(rdmq_scaler)
     print("CBS_range:", len(seg_RD))
-
     # KNN
     k_neighbors = int(len(seg_RD) * k_percent)
     print("k_neighbors:", k_neighbors)
@@ -626,11 +625,9 @@ if len(seg_start) != 0:
     SV_range[:, 0] = SVstart
     SV_range[:, 1] = SVend
     print("RD+KNN_range:" + str(len(SV_range)))
-
     # SR+PEM
     SVStart, SVEnd, SVtype = get_exact_position(chrname, binSize, bam, str1, SVstart, SVend, type)
     print("SR+PEM_range:" + str(len(SVStart)))
-
     number = 1
     output = open(TDresult, "w")
     for i in range(len(SVStart)):
