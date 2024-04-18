@@ -663,6 +663,5 @@ if os.path.exists(RD_file):
     os.remove(RD_file)
 if os.path.exists(newsegname):
     os.remove(newsegname)
-
 end = time.time()
 print(" ** the run time of is: ", end - start, " **")
