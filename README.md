@@ -1,6 +1,8 @@
 # **DTDHM**
 
 DTDHM: Detection of Tandem Duplications Based on Hybrid Methods Using Next-Generation Sequencing Data 
+Target URL: https://sandbox.zenodo.org/doi/10.5072/zenodo.75456
+DOI: 10.5072/zenodo.75457
 
 #### 1.Installation
 
